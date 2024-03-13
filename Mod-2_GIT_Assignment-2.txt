@@ -1,0 +1,35 @@
+● Create a git working directory with feature1.txt and feature2.txt in the master branch
+mkdir git-working-directory
+cd git-working-directory
+git init
+touch feature1.txt feature2.txt
+git add .
+git commit -m "Initial commit with feature1.txt and feature2.txt"
+
+
+● Create 3 branches develop, feature1 and feature2
+git branch develop
+git branch feature1
+git branch feature2
+
+
+● In develop branch create develop.txt, do not stage or commit it
+git checkout develop
+touch develop.txt
+
+
+● Stash this file, and checkout to feature1 branch
+git stash
+git checkout feature1
+
+● Create new.txt file in feature1 branch, stage and commit this file
+touch new.txt
+git add new.txt
+git commit -m "Add new.txt in feature1 branch"
+
+
+● Checkout to develop, unstash this file and commit 
+git checkout develop
+git stash pop
+git add .
+git commit -m "Unstash develop.txt from stash"

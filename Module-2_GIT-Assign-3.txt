@@ -1,0 +1,46 @@
+1) Create a Git Working Directory with Branches:
+
+mkdir git_dir
+cd git_dir
+git init
+git checkout -b develop
+git checkout -b F1
+git checkout -b f2
+
+2)Commit Files in Master Branch:
+
+git checkout master
+touch main.txt
+git add main.txt
+git commit -m "Add main.txt file"
+
+3)Put develop.txt in develop branch, f1.txt and f2.txt in f1 and f2 respectively 
+
+git checkout develop
+touch develop.txt
+git add develop.txt
+git commit -m "Add develop.txt file"
+
+git checkout F1
+touch f1.txt
+git add f1.txt
+git commit -m "Add f1.txt file"
+
+git checkout f2
+touch f2.txt
+git add f2.txt
+git commit -m "Add f2.txt file"
+
+
+4)Push all these branches to github
+
+git push origin master develop F1 f2
+
+5)On local delete f2 branch 
+git branch -d f2
+
+6)Delete the same branch on github as well
+git push origin --delete f2
+
+
+

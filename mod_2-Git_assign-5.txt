@@ -1,0 +1,21 @@
+● Create a gitflow workflow architecture on git
+● Create all the required branches
+● Starting from the feature branch, push the branch to the master, following the
+architecture
+● Push a urgent.txt on master using hotfix 
+
+git flow init
+git flow feature start Feature_Branch
+# Make changes to your files
+git add .
+git commit -m "Add new feature"
+git flow feature finish Feature_Branch
+git push origin master
+git flow hotfix start urgent-fix
+# Make changes to your files
+git add .
+git commit -m "Fix urgent issue"
+git flow hotfix finish urgent-fix
+git push origin master
+
+

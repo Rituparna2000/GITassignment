@@ -1,0 +1,20 @@
+1) create new folder
+mkdir new-folder
+
+2)create files
+	
+vi Code.txt
+vi Log.txt
+vi Output.txt
+
+3)Stage Code and output file
+
+git add Code.txt Output.txt
+
+
+4)Commit
+git commit -m "Add Code.txt and Output.txt"
+
+5)push the changes
+git push
+
