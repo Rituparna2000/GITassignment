@@ -1,0 +1,44 @@
+GIT_repo:https://github.com/Rituparna2000/GITassignment
+1. Initialize Git repository:
+
+$ git init
+
+2. Set up main branches:
+
+$ git checkout -b master
+$ git commit -m "Initialize master branch"
+$ git checkout -b develop
+$ git commit -m "Initialize develop branch"
+
+3. Feature development:
+
+$ git checkout -b feature/new-feature develop
+# Work on the feature, commit changes
+$ git commit -m "Implement new feature"
+$ git checkout develop
+$ git merge --no-ff feature/new-feature
+$ git branch -d feature/new-feature
+
+4. Release preparation:
+
+$ git checkout -b release/release-1.0 develop
+# Perform testing, bug fixes
+$ git commit -m "Prepare for release 1.0"
+$ git checkout master
+$ git merge --no-ff release/release-1.0
+$ git tag -a v1.0 -m "Release 1.0"
+$ git checkout develop
+$ git merge --no-ff release/release-1.0
+$ git branch -d release/release-1.0
+
+5. Hotfix:
+
+$ git checkout -b hotfix/hotfix-1.0.1 master
+# Fix critical issue
+$ git commit -m "Fix critical issue"
+$ git checkout master
+$ git merge --no-ff hotfix/hotfix-1.0.1
+$ git tag -a v1.0.1 -m "Hotfix 1.0.1"
+$ git checkout develop
+$ git merge --no-ff hotfix/hotfix-1.0.1
+$ git branch -d hotfix/hotfix-1.0.1
